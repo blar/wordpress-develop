@@ -721,6 +721,10 @@ function load_template( $_template_file, $require_once = true, $args = array() )
 		// phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		extract( $wp_query->query_vars, EXTR_SKIP );
 	}
+	
+	if ( is_array( $args ) ) {
+		extract( $args, EXTR_SKIP );
+	}
 
 	if ( isset( $s ) ) {
 		$s = esc_attr( $s );
